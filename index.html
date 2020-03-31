@@ -1,0 +1,87 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+
+        <title>Upload</title>
+<style>
+
+*{
+  background-color: lightgrey;
+  text-align: center;
+
+}
+
+h1{
+  text-align: center;
+  font-size: 60px;
+  text-shadow: 1px 1px #000000;
+}
+  p{
+    text-align: center;
+    font-size: 45px;
+    text-shadow: 1px 1px #191919;
+  }
+  </style>
+        <script>
+            window.onload = function () {
+                if (typeof FileReader == "undefined") alert ("Your browser \
+                    is not supported. You will need to update to a modern \
+                    browser with File API support to upload files.");
+                var fileCount = document.getElementById("fileCount");
+                var fileList = document.getElementById("fileList");
+                var fileDrop = document.body;
+                var fileField = document.getElementById("fileField");
+                var bin = "dxqjx6oa5k3tfy1y";
+                var uploadURL = "https:\/\/filebin.net/";
+                var binURL = "https:\/\/filebin.net/dxqjx6oa5k3tfy1y";
+                FileAPI = new FileAPI(
+                    fileCount,
+                    fileList,
+                    fileDrop,
+                    fileField,
+                    bin,
+                    uploadURL,
+                    binURL
+                );
+                FileAPI.init();
+
+                fileDrop.ondrop = FileAPI.uploadQueue;
+
+                fileField.addEventListener("change", FileAPI.uploadQueue)
+            }
+        </script>
+    </head>
+
+    <body id="fileDrop">
+        <div class="container-fluid">
+
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="display-2">
+                        Ladda upp filer
+                    </h1>
+                </div>
+            </div>
+
+
+            <div class="row table-active">
+                <div class="col-sm-12">
+                    <br/>
+                    <p class="lead">
+
+
+                        <span><i class="fa fa-cloud-upload"></i> Ladda upp filen</span>
+                        <input type="file" class="upload" id="fileField" multiple>
+                    </p>
+
+                </div>
+            </div>
+            <br/>
+<button onClick="window.location.reload();">Ladda upp</button>
+
+
+        </div>
+    </body>
+</html>
