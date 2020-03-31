@@ -1,3 +1,4 @@
+!DOCTYPE html
 <html lang="sv">
     <head>
         <meta charset="utf-8">
@@ -5,7 +6,7 @@
 
         <title>Upload</title>
 <style>
-
+/*här stylar jag allt */
 *{
   background-color: lightgrey;
   text-align: center;
@@ -24,6 +25,7 @@ h1{
   }
   </style>
         <script>
+          /*Här är API för files upload till databasen */
             window.onload = function () {
                 if (typeof FileReader == "undefined") alert ("Your browser \
                     is not supported. You will need to update to a modern \
@@ -35,7 +37,7 @@ h1{
                 var bin = "dxqjx6oa5k3tfy1y";
                 var uploadURL = "https:\/\/filebin.net/";
                 var binURL = "https:\/\/filebin.net/dxqjx6oa5k3tfy1y";
-                FileAPI = new FileAPI(
+              /* API */  FileAPI = new FileAPI(
                     fileCount,
                     fileList,
                     fileDrop,
